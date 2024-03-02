@@ -1,0 +1,130 @@
+/* flex containers */
+
+.row,
+.col,
+.centered,
+.middle,
+.box {
+	display: flex;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.col {
+	flex-direction: column;
+}
+
+/* alignment */
+
+.align-center,
+.centered,
+.box {
+	align-items: center;
+}
+
+.middle,
+.box {
+	justify-content: center;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+
+/* scrolls */
+
+.scroll-x {
+	overflow-x: scroll;
+}
+
+.scroll-y {
+	overflow-y: scroll;
+}
+
+.auto-x {
+	overflow-x: auto;
+}
+
+.auto-y {
+	overflow-y: auto;
+}
+
+/* positions */
+
+*[class^="sticky"] {
+	position: sticky;
+}
+
+.sticky-top {
+	top: 0;
+}
+
+.sticky-bottom {
+	bottom: 0;
+}
+
+.sticky-left {
+	left: 0;
+}
+
+.sticky-right {
+	right: 0;
+}
+
+/* children of flex */
+
+.fill {
+	flex-grow: 1;
+	align-self: stretch;
+}
+
+.self-stretch {
+	align-self: stretch;
+}
+
+.self-center {
+	align-self: center;
+}
+
+.self-start {
+	align-self: flex-start;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+/* move to end/start */
+
+.snap-left {
+	margin-right: auto;
+}
+
+.snap-right {
+	margin-left: auto;
+}
+
+.snap-top {
+	margin-bottom: auto;
+}
+
+.snap-bottom {
+	margin-top: auto;
+}
+
+/*  */
+
+.wrap {
+	flex-wrap: wrap;
+}

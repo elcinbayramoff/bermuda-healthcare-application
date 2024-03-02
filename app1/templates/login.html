@@ -1,0 +1,82 @@
+<!-- templates/login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+    
+        h2 {
+            color: #333;
+        }
+    
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+    
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+    
+        button {
+            background-color: #4c70af;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #454ea0;
+        }
+    
+        p {
+            margin-top: 10px;
+        }
+    
+        p.error {
+            color: red;
+        }
+    </style>
+    
+    <h2>Login</h2>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <label for="fin_code"> Code:</label>
+        <input type="text" id="fin_code" name="fin_code" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

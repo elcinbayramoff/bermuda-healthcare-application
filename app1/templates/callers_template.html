@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Callers</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Ambulance Callers</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fin Code</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Patrical Name</th>
+                <th>Sent Time</th>
+                <th>Sent</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for caller in all_callers %}
+                <tr>
+                    <td>{{ caller.fin_code }}</td>
+                    <td>{{ caller.name }}</td>
+                    <td>{{ caller.surname }}</td>
+                    <td>{{ caller.patrical_name }}</td>
+                    <td>{{ caller.sent_time }}</td>
+                    <td>{{ caller.sent }}</td>
+                    <td>
+                        <form method="post" action="{% url 'update_sent' caller.id %}">
+                            {% csrf_token %}
+                            <button type="submit">Update Sent</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,255 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.text {
+	color: #252B42;
+}
+
+.centered-text {
+	text-align: center;
+}
+
+
+.light {
+	color: #fff;
+}
+
+.header {
+	height: 70px;
+	width: 100%;
+	background-color: #E0EAE9;
+}
+
+.header img {
+	height: 100%;
+}
+
+.main {
+	transition: translate 1200ms, opacity 1000ms, scale 700ms;
+	height: 100vh;
+}
+
+.consults,
+.chatbox {
+	display: flex;
+	height: calc(100vh - 70px);
+/*	flex: 1;*/
+/*	flex-grow: 1;*/
+	padding: 20px;
+}
+
+.chatText {
+	background-color: #ededed;
+	border-radius: 40px;
+	padding: 30px 20px;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.actions {
+	gap: 20px;
+}
+
+.mainactions {
+	margin-top: 30px;
+	height: 58px;
+	gap: 10px;
+}
+.mainactions button {
+	flex: 1;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-size: 14px;
+	transition: 200ms;
+}
+.mainactions button:hover {
+	filter: brightness(1.2);
+}
+
+.mainactions button.ambulance {
+	background-color: #FA6B6B;
+}
+.mainactions button.consult {
+	background-color: #5CA3B9;
+}
+
+.input {
+	position: relative;
+	display: flex;
+	height: 68px;
+	padding: 10px 10px 10px 34px;
+	justify-content: space-between;
+	align-items: center;
+
+	border-radius: 135px;
+	border: 3px solid #9FBFE9;
+}
+
+.input input{
+	border-radius: 135px;
+	border: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-left: 20px;
+	padding-right: 100px;
+}
+
+.input button.send {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	border: none;
+	border-radius: 135px;
+	width: 80px;
+	background-color: #6BFAA4;
+	color: #fff;
+	font-size: 17px;
+	scale: 0.8;
+}
+
+.menuIcon {
+	scale: 0.3;
+	opacity: 0.8;
+}
+
+.main.callingAmbulance {
+	transition: 500ms;
+	translate: 0 100%;
+	scale: 0.7;
+	opacity: 0;
+/*	filter: brightness(0.7);*/
+
+}
+
+.ambulanceCover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+/*	background: linear-gradient(20deg, red, blue);*/
+	background-color: #4158D0;
+	background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+	animation: ambulanceCallAnim 300ms;
+}
+
+@keyframes ambulanceCallAnim {
+	from {
+		translate: 0 100%;
+	}
+	to {
+		translate: 0 0;
+
+	}
+}
+
+button.cancel {
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-size: 14px;
+	transition: 200ms;
+/*	background-color: #ff3030;*/
+	background-color: transparent;
+/*	border: 2px solid #ff3030;*/
+	padding: 20px 40px;
+	position: absolute;
+	bottom: 30px;
+	translate: -50% 0;
+}
+
+.profile {
+	position: absolute;
+	z-index: 9999999999;
+	background-color: #ccc;
+	min-width: min(80%, 300px);
+	min-height: 40%;	
+	top: 20px;
+	right: 10px;
+	border-radius: 13px;
+	box-shadow: -6px 6px 10px #3333;
+	animation: profileAnim 300ms;
+	transform-origin: top right;
+}
+
+.profile .closeButton {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	border-radius: 50%;
+	border: none;
+	width: 35px;
+	height: 35px;
+}
+
+@keyframes profileAnim {
+	from {
+		scale: 0;
+		opacity: 0;
+	}
+	to {
+		scale: 1;
+		opacity: 1;
+	}
+}
+
+.profileContent {
+	margin-top: 40px;
+	padding: 20px;
+}
+
+.ourmessage,
+.botmessage {
+	margin-top: 20px;
+}
+
+.botmessage {
+	border-left: 4px solid #448;
+	padding-left: 20px;
+}
+
+.signout {
+	padding: 4px;
+	border-radius: 3px;
+	background-color: #f33;
+	color: #fff;
+}
+
+.profile {
+	font-size: 18px;
+}
+
+.profinf {
+	width: 30%;
+/*	text-align: right;*/
+	margin-right: 6px;
+}
+
+.consults .col {
+	gap: 12px;
+}
+
+.department {
+	padding: 20px;
+	border-radius: 13px;
+	border: none;
+	background-color: #8aade3;
+}
+
+.filterer {
+	font-size: 18px;
+	padding: 17px;
+	border: 2px solid #333;
+	border-radius: 20px;
+	margin: 20px;
+}
