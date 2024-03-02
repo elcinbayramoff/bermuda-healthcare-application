@@ -1,3 +1,14 @@
+# Team Bermuda
+
+Team Bermuda participated in the Hackathon organized by Baku Higher Oil School and Pasha Insurance and developed this project within 1 day. The team members include:
+
+- Elchin Bayramli(me)
+- Yavar Mammadli
+- Vaqif Valiyev(@va9iff)
+
+Our project, named Bermuda, was built during the hackathon, where I took the responsibility for the back-end development using Django. This marked my initial experiences with Django, as reflected in the codebase, especially in the views :)
+
+
 # Healthcare Web Application
 
 This Django web application integrates various healthcare services, including a login system, AI-based symptom assessment, ambulance requests, and consultations with healthcare professionals.
